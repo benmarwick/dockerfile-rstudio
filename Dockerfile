@@ -10,7 +10,7 @@ USER ${NB_USER}
 # e.g. need this for ggforce::geom_sina
 
 RUN  apt-get update \
-  &&  apt-get install libudunits2-dev -y \
+     && apt-get install libudunits2-dev -y \
   
 ## run some R code to get GitHub pkgs
-  && R -e "devtools::install_github(c('thomasp85/patchwork', 'rstudio/gt'))"
+    && R -e "devtools::install_github(c('thomasp85/patchwork', 'rstudio/gt'))"
