@@ -18,7 +18,7 @@ This is a proof-of-concept to deploy a Binder that exposes the RStudio UI instea
 - The The Dockerfile can install linux libraries like this:
 
 ```
-RUN apt-get install libudunits2-dev -y
+RUN sudo apt-get install libudunits2-dev -y
 ```
 
 
