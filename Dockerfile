@@ -6,5 +6,5 @@ COPY . ${HOME}
 RUN chown -R ${NB_USER} ${HOME}
 USER ${NB_USER}
 
-## run any install.R script we find
-RUN if [ -f install.R ]; then R --quiet -f install.R; fi
+## run some R code to get GitHub pkgs
+RUN R -e "devtools::install_github(c('thomasp85/patchwork', 'rstudio/gt'))"
