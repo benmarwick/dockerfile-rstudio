@@ -9,8 +9,14 @@ The advantage of using a Dockerfile here is that we pull a rocker image, rather 
 Plus we can use the Dockerfile to install linux libraries and R packages from GitHub like this:
 
 ```
+# Install linux depedendencies here
+# e.g. need this for ggforce::geom_sina
+
+  RUN sudo apt-get update \
+  && sudo apt-get install libudunits2-dev -y \
+  
 ## run some R code to get GitHub pkgs
-RUN R -e "devtools::install_github(c('thomasp85/patchwork', 'rstudio/gt'))"
+  && R -e "devtools::install_github(c('thomasp85/patchwork', 'rstudio/gt'))"
 ```
 
 
