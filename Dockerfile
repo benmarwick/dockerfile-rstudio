@@ -6,4 +6,4 @@ COPY . ${HOME}
 RUN chown -R ${NB_USER} ${HOME}
 USER ${NB_USER}
 
-RUN  R -e "update.packages(ask = FALSE, dependencies = TRUE); devtools::install_github(c('thomasp85/patchwork', 'rstudio/gt'))"
+RUN  R -e "devtools::install_github(c('r-lib/rlang', 'thomasp85/patchwork', 'rstudio/gt'))"
