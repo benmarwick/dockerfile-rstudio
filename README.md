@@ -4,13 +4,21 @@
 
 This is a proof-of-concept to deploy a Binder that exposes the RStudio UI instead of a Jupyter Notebook. It also installs several packages from the tidyverse.
 
-The advantage of using a Dockerfile here is that we pull a rocker image, rather than building one. So it's very fast to get the Binder up and running.
+## What have we got here?
 
-Plus we can use the Dockerfile to install  R packages from GitHub like this:
+- The Dockerfile gives instructions to Binder to make the notebook in your browser
+- The Dockerfile gives instructions to [Circle-CI](ps://circleci.com/gh/benmarwick/dockerfile-rstudio) for continuous integration
+- The Dockerfile will get a pre-built Docker container using `FROM rocker/binder:3.5.1`, this saves a lot of time waiting for Binder to make our notebook, because tidyverse packages are already installed in the container
+- The Dockerfile can install  R packages from GitHub like this:
 
 ```
   RUN  R -e "devtools::install_github(c('thomasp85/patchwork', 'rstudio/gt'))"
 ```
 
-We are also using [Circle-CI](ps://circleci.com/gh/benmarwick/dockerfile-rstudio) for continuous integration. Circle-CI uses the same Dockerfile as Binder, and it just works. 
+- The The Dockerfile can install linux libraries like this:
+
+```
+RUN apt-get install libudunits2-dev -y
+```
+
 
