@@ -6,4 +6,4 @@ COPY . ${HOME}
 RUN chown -R ${NB_USER} ${HOME}
 USER ${NB_USER}
 
-RUN  R -e "devtools::install_github( 'thomasp85/patchwork' ))"
+RUN  R -e "devtools::install_github( 'thomasp85/patchwork' )"
