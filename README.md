@@ -15,6 +15,8 @@ This is a proof-of-concept to deploy a Binder that exposes the RStudio UI instea
   RUN  R -e "devtools::install_github(c('thomasp85/patchwork', 'rstudio/gt'))"
 ```
 
-- The The Dockerfile cannot install linux libraries for Binder, so we have an `apt.txt` file to do that
-- We have no way to install linux libraries for [Circle-CI](ps://circleci.com/gh/benmarwick/dockerfile-rstudio), since they require us to use `sudo apt-get` in the Dockerfile, and Binder doesn't work with those. 
+## What are the limitations?
+
+- The The Dockerfile **cannot** install linux libraries for Binder, so we have an `apt.txt` file to do that
+- We have **no way** to install linux libraries for [Circle-CI](ps://circleci.com/gh/benmarwick/dockerfile-rstudio), since they require us to use `sudo apt-get` in the Dockerfile, and Binder doesn't work with those. 
 
