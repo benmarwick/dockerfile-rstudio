@@ -2,7 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/benmarwick/dockerfile-rstudio.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/benmarwick/dockerfile-rstudio)  [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/benmarwick/dockerfile-rstudio/master?urlpath=rstudio)
 
-This is a proof-of-concept to deploy a Binder that exposes the RStudio UI instead of a Jupyter Notebook. It also installs several packages from the tidyverse.
+This is a proof-of-concept to deploy a Binder that exposes the RStudio UI instead of a Jupyter Notebook. It also installs several packages from the tidyverse. And it connects to a Continuous Integration service to automatically check the code.
 
 ## What have we got here?
 
